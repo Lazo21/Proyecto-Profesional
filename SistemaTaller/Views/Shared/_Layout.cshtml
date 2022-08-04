@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    @*<meta name="viewport" content="width=device-width, initial-scale=1.0">*@
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>@ViewBag.Title  TALLER DOUGLAS ROJAS</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="~/Content/fontawesome-all.min.css" rel="hoja de estilo" />
+    <link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/buttons.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/extensions/Responsive/css/responsive.dataTables.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/extensions/Responsive/css/responsive.bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/buttons.bootstrap4.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("TALLER DOUGLAS ROJAS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <div class="nav navbar-nav">
+
+                    <ul>
+                        <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                    </ul>
+                    @if (User.IsInRole("Administrador"))
+                    {
+                        <a class="nav-link" href="#">Mantenimientos</a>
+                            <ul><li>@Html.ActionLink("Clientes", "Index", "Clientes")</li></ul>
+                            <ul><li>@Html.ActionLink("Vehículos", "Index", "Placas")</li></ul>
+                            <ul><li>@Html.ActionLink("Historicos", "Index", "Historicos")</li></ul>
+                            <a class="nav-link" href="#">Mantenimiento Opciones</a>
+                            <ul><li>@Html.ActionLink("Servicios", "Index", "Servicios")</li></ul>
+                            <ul><li>@Html.ActionLink("Marcas", "Index", "Marcas")</li></ul>
+                            <a class="nav-link" href="#">Ayudás</a>
+                            <ul><li>@Html.ActionLink("Manual de Ayuda Administrador", "Index", "AyudaAdmin")</li></ul>
+                            <ul><li>@Html.ActionLink("Manual de Ayuda", "Index", "Ayuda")</li></ul>
+                            <a class="nav-link" href="#">Reportes</a>
+                            <ul><li>@Html.ActionLink("Reporte Vehiculos", "Index", "ReportePlacas")</li></ul>
+                            <ul><li>@Html.ActionLink("Reporte Clientes", "Index", "ReporteClientes")</li></ul>
+                            <ul><li>@Html.ActionLink("Reporte Historicos", "Index", "ReporteHistoricos")</li></ul>
+                            <a class="nav-link" href="#">Cotizar</a>
+                            <ul><li>@Html.ActionLink("Cotización", "Index", "Cotizaciones")</li></ul>
+                            <ul><li>@Html.ActionLink("Impresión", "Index", "ReporteCotizacion")</li></ul>
+                            <ul><li>@Html.ActionLink("Enviar Correo", "EnviarCorreo", "EnviarCorreo")</li></ul>
+                            <a class="nav-link" href="#">Personal</a>
+                            <ul><li>@Html.ActionLink("Empleados", "Index", "Empleados")</li></ul>
+                            <ul><li>@Html.ActionLink("Reporte Empleados", "Index", "ReporteEmpleados")</li></ul>
+                            <a class="nav-link" href="#">Seguridad</a>
+                            <ul><li>@Html.ActionLink("Crear Usuarios", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</ul>
+                            <ul><li>@Html.ActionLink("Admin Usuarios", "Index", "AspNetUsers")</li></ul>
+                            <a class="nav-link" href="#">Bitacoras</a>
+                            <ul><li>@Html.ActionLink("Bitacora Movimiento", "Index", "Bitacoras_Movimiento")</li></ul>
+                            <ul><li>@Html.ActionLink("Bitacora Ingreso", "Index", "Bitacoras_Ingreso")</li></ul>
+                            <ul><li>@Html.ActionLink("Reporte Bitacora Movimiento", "Index", "ReporteBitacora_Movimiento")</li></ul>
+                            <ul><li>@Html.ActionLink("Reporte Bitacora Ingreso", "Index", "ReporteBitacora_Ingreso")</li></ul>
+                            <a class="nav-link" href="#">Sistema</a>
+                            <ul><li>@Html.ActionLink("Acerca de", "About", "Home")</li></ul>
+                            <ul><li>@Html.ActionLink("Roles", "Index", "Role")</li></ul>
+                    }
+                    @if (User.IsInRole("Asistente"))
+                        {
+                            <a class="nav-link" href="#">Mantenimientos</a>
+                        <ul><li>@Html.ActionLink("Clientes", "Index", "Clientes")</li></ul>
+                        <ul><li>@Html.ActionLink("Vehículos", "Index", "Placas")</li></ul>
+                        <ul><li>@Html.ActionLink("Historicos", "Index", "Historicos")</li></ul>
+                            <a class="nav-link" href="#">Cotizar</a>
+                        <ul><li>@Html.ActionLink("Cotizacion", "Index", "Cotizaciones")</li></ul>
+                        <ul><li>@Html.ActionLink("Impresión", "Index", "ReporteCotizacion")</li></ul>
+                            <a class="nav-link" href="#">Ayudas</a>
+                        <ul><li>@Html.ActionLink("Manual de Ayuda", "Index", "Ayuda")</li></ul>
+                        }
+                </div>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year  TALLER DOUGLAS ROJAS</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryui")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/DataTables/buttons.html5.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.buttons.min.js"></script>
+    <script src="~/Scripts/DataTables/extensions/Buttons/js/buttons.flash.min.js"></script>
+    <script src="~/Scripts/DataTables/extensions/pdfmake/vfs_fonts.js"></script>
+    <script src="~/Scripts/DataTables/extensions/Buttons/js/buttons.html5.min.js"></script>
+    <script src="~/Scripts/DataTables/extensions/pdfmake/pdfmake.min.js"></script>
+    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.buttons.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+    <script src="~/Scripts/DataTables/buttons.colVis.min.js"></script>
+    <script src="~/Scripts/DataTables/buttons.html5.min.js"></script>
+    <script src="~/Scripts/DataTables/buttons.flash.min.js"></script>
+    <script src="~/Scripts/DataTables/buttons.print.min.js"></script>
+    <script src="~/Scripts/DataTables/buttons.bootstrap.min.js"></script>
+    <script src="~/Scripts/jszip.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.fixedColumns.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.fixedHeader.min.js"></script>
+    <script src="~/Scripts/DataTables/extensions/Responsive/js/dataTables.responsive.js"></script>
+    <script src="~/Scripts/DataTables/extensions/Responsive/js/responsive.bootstrap.js"></script>
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.bootstrap4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.colVis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    @*<script src="~/js/sweetAlert.js"></script>*@
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Scripts/printThis.js"></script>
+</body>
+</html>

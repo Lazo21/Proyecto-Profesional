@@ -1,0 +1,59 @@
+﻿@model SistemaTaller.Models.Usuario
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Esta seguro de eliminar este registro?</h3>
+<div>
+    <h4>Usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Detalle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Detalle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AspNetRole.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetRole.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AspNetUser.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetUser.Email)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="col-md-offset-2 col-md-1">
+            <input type="submit" value="Eliminar" class="btn btn-outline-success btn-lg" />
+            <hr />
+        </div>
+        <div class="col-md-offset-1 col-md-1">
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-outline-primary btn-sm" })
+        </div>
+    }
+</div>

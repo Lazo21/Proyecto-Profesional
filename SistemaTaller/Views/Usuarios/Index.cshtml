@@ -1,0 +1,82 @@
+﻿@model IEnumerable<SistemaTaller.Models.Usuario>
+
+@{
+    ViewBag.Title = "Usuario";
+}
+
+<h2>Usuario</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-outline-success btn-lg" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Detalle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AspNetRole.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AspNetUser.Email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Detalle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AspNetRole.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AspNetUser.Email)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.IdUsuario }) <i class="fa fa-edit" style="font-size: 17px; color: forestgreen"></i> |
+            @Html.ActionLink("Details", "Details", new { id = item.IdUsuario }) <i class="fa fa-file" style="font-size: 17px; color: forestgreen"></i>  |
+            @Html.ActionLink("Delete", "Delete", new { id = item.IdUsuario }) <i class="fa fa-trash" style="font-size: 17px; color: forestgreen"></i>
+        </td>
+    </tr>
+}
+
+</table>
+<tr>
+    <td>
+        <div class="col-md-offset-1 col-md-1">
+            @Html.ActionLink("Salir", "Index", "Home", null, new { @class = "btn btn-outline-primary btn-sm" })
+        </div>
+    </td>
+</tr>
+
+<script type="text/javascript" src="~/Scripts/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+@{
+    var aler = Request.QueryString["evento"] ?? "";
+}
+
+<script type="text/javascript">
+    //i'm using jquery ready event which will call the javascript chunk after the page has completed loading
+    $(document).ready(function () {
+
+        var indicador = '@aler';
+
+        if (indicador === "1") {
+            swal("Usuario Guardado", "Exitosamente!", "success");
+        }
+        if (indicador === "2") {
+            swal("Usuario Modificado", "Exitosamente!", "success");
+        }
+        if (indicador === "3") {
+            swal("Usuario Eliminado", "Exitosamente!", "success");
+        }
+    });
+</script>

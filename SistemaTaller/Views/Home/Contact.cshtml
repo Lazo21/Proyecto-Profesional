@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Contactanos";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>TALLER DOUGLAS ROJAS</h3>
+
+<address>
+    San Jose, Costa Rica<br />
+    Desamparados, 100 N 100 O Iglesia Católica<br />
+    <abbr title="Télefono">Celular:</abbr>
+    8815-7913
+</address>
+
+<p>
+    <h3>
+        <img src="~/Imagenes/QR.jpg" />
+    </h3>
+</p>
+
+<address>
+    <strong>Estamos a la orden:</strong>   <a href="http://tallerdouglasrojas.com/">www.tallerdouglasrojas.com</a><br />
+</address>
+
+<tr>
+    <td>
+        <div class="col-md-offset-1 col-md-1">
+            @Html.ActionLink("Salir", "Index", "Home", null, new { @class = "btn btn-outline-primary btn-sm" })
+        </div>
+    </td>
+</tr>

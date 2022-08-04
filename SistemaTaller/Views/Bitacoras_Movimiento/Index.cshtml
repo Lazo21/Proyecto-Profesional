@@ -1,0 +1,72 @@
+﻿@model IEnumerable<SistemaTaller.Models.Bitacora_Movimiento>
+
+@{
+    ViewBag.Title = "Bitacora Movimiento Usuarios";
+}
+
+<h2>Bitacora Movimiento Usuarios</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+@using (Html.BeginForm())
+{
+    <p>
+        Buscar: @Html.TextBox("BuscarBM")
+        <button> Buscar</button>
+        <br /> @Html.ActionLink("Todos los registros...", "Index")
+    </p>
+}
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaHoraMovimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoMovimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DetalleMovimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdRef)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaHoraMovimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoMovimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DetalleMovimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdRef)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.IdBitacoraMovimiento }) |*@
+            @*@Html.ActionLink("Details", "Details", new { id=item.IdBitacoraMovimiento }) |*@
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.IdBitacoraMovimiento })*@
+        </td>
+    </tr>
+}
+</table>
+<tr>
+    <td>
+        <div class="col-md-offset-1 col-md-1">
+            @Html.ActionLink("Salir", "Index", "Home", null, new { @class = "btn btn-outline-primary btn-sm" })
+        </div>
+    </td>
+</tr>

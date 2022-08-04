@@ -1,0 +1,67 @@
+﻿@model IEnumerable<SistemaTaller.Models.Bitacora_Ingreso>
+
+@{
+    ViewBag.Title = "Bitacora Usuario Ingreso/Salida";
+}
+
+<h2>Index</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Buscar: @Html.TextBox("BuscarBI")
+        <button> Buscar</button>
+        <br /> @Html.ActionLink("Todos los registros...", "Index")
+    </p>
+}
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaHoraIngreso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaHoraSalida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalMinutos)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaHoraIngreso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaHoraSalida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalMinutos)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.IdBitacoraIngreso }) |*@
+            @*@Html.ActionLink("Details", "Details", new { id=item.IdBitacoraIngreso }) |*@
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.IdBitacoraIngreso })*@
+        </td>
+    </tr>
+}
+</table>
+<tr>
+    <td>
+        <div class="col-md-offset-1 col-md-1">
+            @Html.ActionLink("Salir", "Index", "Home", null, new { @class = "btn btn-outline-primary btn-sm" })
+        </div>
+    </td>
+</tr>

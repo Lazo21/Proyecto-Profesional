@@ -1,0 +1,135 @@
+﻿@model IEnumerable<SistemaTaller.Models.Cotizacion>
+
+@{
+    ViewBag.Title = "Cotización";
+}
+
+<h2>Reporte</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-amaru" id="MyData">
+        <thead>
+            <tr style="background-color:aliceblue">
+                <th>
+                    @Html.DisplayNameFor(model => model.CodCotizacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NPlaca)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cedula)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NombreClien)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TelefClien)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fecha)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NServicio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Detalle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Monto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descuento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubTotal)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IVA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Total)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Vigencia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NEmpleado)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CodCotizacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NPlaca)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cedula)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreClien)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TelefClien)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NServicio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Detalle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Monto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descuento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubTotal)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IVA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Total)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Vigencia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NEmpleado)
+                    </td>
+                    <td>
+                        @*@Html.ActionLink("Edit", "Edit", new { id = item.IdCotizacion }) |*@
+                        @Html.ActionLink("Imprimir", "Details", new { id = item.IdCotizacion }) <i class="fas fa-print" style="font-size: 17px; color: red"></i>
+                        @*@Html.ActionLink("Delete", "Delete", new { id = item.IdCotizacion })*@
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<tr>
+    <td>
+        <div class="col-md-offset-1 col-md-1">
+            @Html.ActionLink("Salir", "Index", "Home", null, new { @class = "btn btn-outline-primary btn-sm" })
+        </div>
+    </td>
+</tr>

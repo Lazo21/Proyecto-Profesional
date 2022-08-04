@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="aacb975ea60049a9a378c492bc71ac2a" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_A698ED_ericyamiModel.AspNetRole" Width="1.5" PointX="2.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A698ED_ericyamiModel.AspNetUserClaim" Width="1.5" PointX="7.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A698ED_ericyamiModel.AspNetUserLogin" Width="1.5" PointX="7.25" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A698ED_ericyamiModel.AspNetUser" Width="1.5" PointX="5" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A698ED_ericyamiModel.Bitacora_Ingreso" Width="1.5" PointX="8.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A698ED_ericyamiModel.Bitacora_Movimiento" Width="1.5" PointX="8.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A698ED_ericyamiModel.Cliente" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A698ED_ericyamiModel.Cotizacion" Width="1.5" PointX="10.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A698ED_ericyamiModel.Empleado" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A698ED_ericyamiModel.Historico" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A698ED_ericyamiModel.Marca" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A698ED_ericyamiModel.Placa" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A698ED_ericyamiModel.Servicio" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A698ED_ericyamiModel.Usuario" Width="1.5" PointX="10.25" PointY="11.5" IsExpanded="true" />
+        <AssociationConnector Association="DB_A698ED_ericyamiModel.FK_Usuario_AspNetRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A698ED_ericyamiModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A698ED_ericyamiModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A698ED_ericyamiModel.FK_Usuario_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A698ED_ericyamiModel.FK_HISTORICO_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A698ED_ericyamiModel.FK_PLACA_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A698ED_ericyamiModel.FK_HISTORICO_EMPLEADO" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A698ED_ericyamiModel.FK_HISTORICO_PLACA" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A698ED_ericyamiModel.FK_HISTORICO_SERVICIO" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A698ED_ericyamiModel.FK_PLACA_MARCA" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A698ED_ericyamiModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

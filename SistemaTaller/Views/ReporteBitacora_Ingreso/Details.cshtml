@@ -1,0 +1,50 @@
+﻿@model SistemaTaller.Models.Bitacora_Ingreso
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Bitacora_Ingreso</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaHoraIngreso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaHoraIngreso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaHoraSalida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaHoraSalida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalMinutos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalMinutos)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdBitacoraIngreso }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

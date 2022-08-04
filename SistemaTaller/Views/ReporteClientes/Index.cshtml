@@ -1,0 +1,104 @@
+﻿@model IEnumerable<SistemaTaller.Models.Cliente>
+
+@{
+    ViewBag.Title = "Clientes";
+}
+
+<h2>Reporte</h2>
+
+<p>
+    @*Html.ActionLink("Create New", "Create")*@
+</p>
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-amaru" id="MyData">
+        <thead>
+            <tr style="background-color:aliceblue">
+                <th>
+                    @Html.DisplayNameFor(model => model.Cedula)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaNacimiento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Direccion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Telefono)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cedula)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Direccion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefono)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @*@Html.ActionLink("Edit", "Edit", new { id = item.IdCliente }) |*@
+                        @*@Html.ActionLink("Details", "Details", new { id = item.IdCliente }) |*@
+                        @*@Html.ActionLink("Delete", "Delete", new { id = item.IdCliente })*@
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<tr>
+    <td>
+        <div class="col-md-offset-1 col-md-1">
+            @Html.ActionLink("Salir", "Index", "Home", null, new { @class = "btn btn-outline-primary btn-sm" })
+        </div>
+    </td>
+</tr>
+
+
+<script type="text/javascript" src="~/Scripts/jquery-3.5.1.min.js"></script>
+
+@section Scripts {
+
+    <script type="text/javascript">
+//i'm using jquery ready event which will call the javascript chunk after the page has completed loading
+$(document).ready(function () {
+var MyData = $('#MyData').DataTable({
+responsive: true,
+"language": {
+"info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+"search": "Buscar:",
+"infoEmpty": "Mostrando 0 al 0 de 0 datos ",
+"lengthMenu": "Mostrar _MENU_ datos",
+"loadingRecords": "Cargando...",
+"processing": "Procesando...",
+"zeroRecords": "Ningun registro coincide",
+},
+"dom": 'Bfrtip',
+"pageLength": 100,
+buttons: [
+'print', 'pdf', 'excel', 'csv',
+]
+});
+});
+    </script>
+}
