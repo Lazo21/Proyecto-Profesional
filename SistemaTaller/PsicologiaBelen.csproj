@@ -758,11 +758,11 @@
     <Content Include="Views\Expedientes\Details.cshtml" />
     <Content Include="Views\Expedientes\Edit.cshtml" />
     <Content Include="Views\Expedientes\Index.cshtml" />
-    <Content Include="Views\Marcas\Create.cshtml" />
-    <Content Include="Views\Marcas\Delete.cshtml" />
-    <Content Include="Views\Marcas\Details.cshtml" />
-    <Content Include="Views\Marcas\Edit.cshtml" />
-    <Content Include="Views\Marcas\Index.cshtml" />
+    <Content Include="Views\Filiacion\Create.cshtml" />
+    <Content Include="Views\Filiacion\Delete.cshtml" />
+    <Content Include="Views\Filiacion\Details.cshtml" />
+    <Content Include="Views\Filiacion\Edit.cshtml" />
+    <Content Include="Views\Filiacion\Index.cshtml" />
     <Content Include="Views\Placas\Create.cshtml" />
     <Content Include="Views\Placas\Delete.cshtml" />
     <Content Include="Views\Placas\Details.cshtml" />
