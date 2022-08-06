@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PasicologiaBelen.Models
+namespace SistemaTaller.Models
 {
     using System;
     
