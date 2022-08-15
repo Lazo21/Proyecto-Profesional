@@ -1,0 +1,129 @@
+﻿@model IEnumerable<SistemaTaller.Models.Historico>
+
+@{
+    ViewBag.Title = "Histórico";
+}
+
+<h2>Histórico</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create", null, new { @class = "btn btn-outline-success btn-lg" })
+</p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Buscar: @Html.TextBox("BuscarHisto")
+        <button> Buscar </button>
+        <br />
+        @Html.ActionLink("Todos los registros...", "Index")
+    </p>
+}
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-amaru" id="MyData">
+        <thead>
+            <tr style="background-color:aliceblue">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Detalle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaEntrada)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaReparacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaSalida)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cliente.Cedula)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empleado.Cedula)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Placa.PlacaN)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Servicio.NombreServicio)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Detalle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaEntrada)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaReparacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaSalida)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cliente.Cedula)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Empleado.Cedula)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Placa.PlacaN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Servicio.NombreServicio)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.IdHistorico }) <i class="fa fa-edit" style="font-size: 17px; color: forestgreen"></i>
+                        @Html.ActionLink("Details", "Details", new { id = item.IdHistorico }) <i class="fa fa-file" style="font-size: 17px; color: forestgreen"></i>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.IdHistorico }) <i class="fa fa-trash" style="font-size: 17px; color: forestgreen"></i>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<tr>
+    <td>
+        <div class="col-md-offset-1 col-md-1">
+            @Html.ActionLink("Salir", "Index", "Home", null, new { @class = "btn btn-outline-primary btn-sm" })
+        </div>
+    </td>
+</tr>
+
+<script type="text/javascript" src="~/Scripts/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+@{
+    var aler = Request.QueryString["evento"] ?? "";
+}
+
+<script type="text/javascript">
+    //i'm using jquery ready event which will call the javascript chunk after the page has completed loading
+    $(document).ready(function () {
+
+        var indicador = '@aler';
+
+        if (indicador === "1") {
+            swal("Historico Guardado", "Exitosamente!", "success");
+        }
+        if (indicador === "2") {
+            swal("Historico Modificado", "Exitosamente!", "success");
+        }
+        if (indicador === "3") {
+            swal("Historico Eliminado", "Exitosamente!", "success");
+        }
+    });
+</script>

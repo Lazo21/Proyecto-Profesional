@@ -1,0 +1,90 @@
+﻿@model SistemaTaller.Models.Historico
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Historico</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Detalle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Detalle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaEntrada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaEntrada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaReparacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaReparacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaSalida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaSalida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Cedula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Cedula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleado.Cedula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleado.Cedula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Placa.PlacaN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Placa.PlacaN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servicio.NombreServicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servicio.NombreServicio)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdHistorico }) <i class="fa fa-edit" style="font-size: 17px; color: forestgreen"></i>
+    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-outline-primary btn-sm" })
+</p>
